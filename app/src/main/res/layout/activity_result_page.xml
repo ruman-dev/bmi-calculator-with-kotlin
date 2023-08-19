@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultPage"
+    android:orientation="vertical"
+    android:background="#040404"
+    android:padding="20dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ubuntu_bold"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/rounded_background"
+    android:backgroundTint="#80807D"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Current BMI"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/ubuntu_medium"
+        />
+    <TextView
+        android:id="@+id/bmiResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:text="0.0"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/Comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UnderWeight"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu_medium"
+        />
+
+
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/detailsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:gravity="left"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/ubuntu_bold"
+            />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/ReCalculateBtn"
+        android:layout_below="@+id/detailsBtn"
+        >
+        <TextView
+            android:id="@+id/CommentDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Be Patience for further assist you!"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:letterSpacing=".01"
+            android:fontFamily="@font/ubuntu_regular"
+            />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ReCalculateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#06C46C"
+        android:text="Recalculate BMI"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:cornerRadius="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/ubuntu_bold"
+        />
+</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040404"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="BMI Calculator"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Gender"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/MaleCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:backgroundTintMode="src_in"
+            android:clickable="true"
+            android:focusable="true"
+            android:backgroundTint="@color/MaleFemaleButtonColor"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:layout_width="125dp"
+                android:layout_height="125dp">
+
+                <ImageView
+                    android:id="@+id/MaleImageIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/baseline_man_24" />
+
+                <TextView
+                    android:id="@+id/MaleImageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="Male"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/FemaleCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/MaleCardView"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:backgroundTintMode="src_in"
+            android:focusable="true"
+            android:backgroundTint="@color/MaleFemaleButtonColor"
+            app:cardCornerRadius="20dp">
+
+            <RelativeLayout
+                android:layout_width="125dp"
+                android:layout_height="125dp">
+
+                <ImageView
+                    android:id="@+id/FemaleImageIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/baseline_woman_24" />
+
+                <TextView
+                    android:id="@+id/FemaleImageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/FemaleImageIcon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="Female"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/LayoutHeightWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/HeightNumberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/HeightTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="Height"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <NumberPicker
+                android:id="@+id/HeightPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                />
+
+            <TextView
+                android:id="@+id/HeightUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="cm"
+                android:textSize="20sp"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/WeightNumberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="15dp">
+
+            <TextView
+                android:id="@+id/WeightTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="Weight"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <NumberPicker
+                android:id="@+id/WeightPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                />
+
+            <TextView
+                android:id="@+id/WeightUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="kg"
+                android:textSize="20sp"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/CalculateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#06C46C"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Calculate"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:cornerRadius="10dp" />
+    </RelativeLayout>
+</LinearLayout>

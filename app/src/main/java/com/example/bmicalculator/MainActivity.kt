@@ -1,0 +1,67 @@
+package com.example.bmicalculator
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Color
+import android.os.Bundle
+import android.widget.Button
+import android.widget.NumberPicker
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+
+class MainActivity : AppCompatActivity() {
+
+    var doubleHeight : Double = 1.0
+    var doubleWeight : Double = 1.0
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val HeightPicker = findViewById<NumberPicker>(R.id.HeightPicker)
+        val WeightPicker = findViewById<NumberPicker>(R.id.WeightPicker)
+        val CalculateBtn = findViewById<Button>(R.id.CalculateBtn)
+        val MaleCardView = findViewById<CardView>(R.id.MaleCardView)
+        val FemaleCardView = findViewById<CardView>(R.id.FemaleCardView)
+
+        HeightPicker.minValue = 100
+        HeightPicker.maxValue = 250
+
+        WeightPicker.minValue = 30
+        WeightPicker.maxValue = 150
+
+        MaleCardView.setOnClickListener {
+            MaleCardView.setBackgroundColor(Color.parseColor("#06C46C"))
+            FemaleCardView.setBackgroundColor(Color.parseColor("#80807D"))
+        }
+        FemaleCardView.setOnClickListener {
+            FemaleCardView.setBackgroundColor(Color.parseColor("#06C46C"))
+            MaleCardView.setBackgroundColor(Color.parseColor("#80807D"))
+        }
+
+
+
+        HeightPicker.setOnValueChangedListener { Hpicker, HoldVal, HnewVal ->
+            HeightPicker.value = HnewVal
+        }
+
+        WeightPicker.setOnValueChangedListener { Wpicker, WoldVal, WnewVal ->
+            WeightPicker.value = WnewVal
+        }
+
+        // Set the Calculate button click listener here
+        CalculateBtn.setOnClickListener {
+            val height = HeightPicker.value.toDouble() / 100  // Convert to meters
+            val weight = WeightPicker.value.toDouble()
+            val bmi = CalculateBMI(height, weight)
+
+            val intent = Intent(this, ResultPage::class.java)
+            intent.putExtra("BMI", bmi)
+            startActivity(intent)
+        }
+    }
+
+    private fun CalculateBMI(height: Double, weight: Double): Double {
+        return weight / (height * height)
+    }
+}
