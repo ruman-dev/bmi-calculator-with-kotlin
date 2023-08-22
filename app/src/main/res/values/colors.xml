@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="my_statusbar_color">#040404</color>
     <color name="your_outline_color">#06C46C</color>
     <color name="MaleFemaleButtonColor">#80807D</color>
+    <color name="customStatusBarColor">#06C46C</color>
 </resources>
