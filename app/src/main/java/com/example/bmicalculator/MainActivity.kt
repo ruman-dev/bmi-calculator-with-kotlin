@@ -24,11 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = ContextCompat.getColor(this, R.color.customStatusBarColor)
-        }
-
         val HeightPicker = findViewById<NumberPicker>(R.id.HeightPicker)
         val WeightPicker = findViewById<NumberPicker>(R.id.WeightPicker)
         val CalculateBtn = findViewById<Button>(R.id.CalculateBtn)
